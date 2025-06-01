@@ -52,7 +52,7 @@ export const servicesData = {
         { "title": "Strategy", "description": "Content planning" },
         { "title": "Management", "description": "Account handling" },
         { "title": "Analytics", "description": "Performance tracking" },
-        { "title": "Ads", "description": "Paid campaigns" },
+        { "title": "Ad's", "description": "Paid campaigns" },
         { "title": "Community", "description": "Engagement" }
       ]
     }
