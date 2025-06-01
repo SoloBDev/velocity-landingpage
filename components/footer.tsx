@@ -43,7 +43,7 @@ const Footer = () => {
       <div className='max-w-7xl mx-auto '>
         <div className='flex justify-between flex-col-reverse sm:flex-row items-center md:gap-8'>
           {/* Left Section - Company Description */}
-          <div className='flex flex-col justify-evenly h-full gap-10 sm:gap-20 md:gap-32 lg:gap-40'>
+          <div className='flex flex-col justify-evenly h-full gap-10 sm:gap-20 md:gap-32 lg:gap-40 footer-section'>
             <div className='space-y-4 footer-section '>
               <p className='text-gray-300 sm:text-left text-sm sm:text-base md:text-lg font-montserrat sm:leading-relaxed max-w-md text-justify'>
                 We Forge Digital Success For Local Businesses In Addis Ababa,
@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
 
           {/* Right Side */}
-          <div className='flex flex-col justify-between items-center gap-6 sm:gap-20 md:gap-40 md:h-full'>
+          <div className='flex flex-col justify-between items-center gap-6 sm:gap-20 md:gap-40 md:h-full footer-section'>
             <div className='flex flex-wrap sm:grid sm:grid-cols-2 !justify-between md:flex md:flex-wrap gap-8 sm:gap-4 sm:gap-x-8 md:gap-x-5 lg:gap-8 footer-section'>
               <a
                 href='#'

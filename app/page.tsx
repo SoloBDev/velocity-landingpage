@@ -350,14 +350,14 @@ export default function Home() {
 
         <section
           ref={contactRef}
-          className='relative max-w-5xl mx-auto px-6 py-2 top-[140rem] sm:top-[168rem] md:top-[106rem] lg:top-[80rem]'
+          className='relative max-w-5xl mx-auto px-6 py-2 top-[144rem] sm:top-[168rem] md:top-[106rem] lg:top-[80rem]'
         >
           <ContactUs />
         </section>
 
         <footer
           ref={footerRef}
-          className='relative top-[128rem] sm:top-[152rem] md:top-[92rem] lg:top-[72rem] w-full text-green-700 py-8 px-1 sm:px-3 md:px-5 lg:px-10 text-center'
+          className='relative top-[132rem] sm:top-[152rem] md:top-[92rem] lg:top-[72rem] w-full text-green-700 py-8 px-1 sm:px-3 md:px-5 lg:px-10 text-center'
         >
           <Footer />
         </footer>
