@@ -171,7 +171,7 @@
   .bg_advert,
   .bg_graphics,
   .bg_edit {
-    height: 280px;
+    height: 300px;
     background-position: center;
   }
 }
@@ -183,7 +183,7 @@
   .bg_advert,
   .bg_graphics,
   .bg_edit {
-    height: 220px;
+    height: 250px;
   }
 }
 

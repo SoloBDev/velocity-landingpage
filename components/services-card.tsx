@@ -31,7 +31,7 @@ const ServiceCard = ({
           ease: "power3.out",
           scrollTrigger: {
             trigger: cardRef.current,
-            start: "top 30%", // when the card's top hits 50% of viewport
+            start: "top 30%", // when the card's top hits 30% of viewport
             toggleActions: "play play none reverse",
           },
         });
@@ -47,7 +47,7 @@ const ServiceCard = ({
     if (itemCount === 1) {
       return (
         <>
-          <div className='bg-slate-600 rounded-lg px-12 py-24 text-white text-center mb-4'>
+          <div className='bg-slate-600 rounded-lg px-12 py-16 sm:py-24 text-white text-center mb-4'>
             <div className='text-sm font-medium'>{service.items[0].title}</div>
             <div className='text-xs'>{service.items[0].description}</div>
           </div>
@@ -56,13 +56,13 @@ const ServiceCard = ({
     } else if (itemCount === 2 || itemCount === 3) {
       return (
         <>
-          <div className='bg-slate-600 rounded-lg px-8 py-12 text-white text-center mb-4'>
+          <div className='bg-slate-600 rounded-lg px-8 py-7 sm:py-12 text-white text-center mb-4'>
             <div className='text-sm font-medium'>{service.items[0].title}</div>
             <div className='text-xs'>{service.items[0].description}</div>
           </div>
           <div className='grid grid-cols-2 gap-4'>
             {service.items.slice(1).map((item, index) => (
-              <div key={index} className='bg-slate-600 rounded-lg px-4 py-8 text-white text-center'>
+              <div key={index} className='bg-slate-600 rounded-lg px-4 py-3 sm:py-8 text-white text-center'>
                 <div className='text-sm font-medium'>{item.title}</div>
                 <div className='text-xs'>{item.description}</div>
               </div>
@@ -75,7 +75,7 @@ const ServiceCard = ({
         <>
           <div className='grid grid-cols-2 gap-4 mb-4'>
             {service.items.slice(0, 2).map((item, index) => (
-              <div key={index} className='bg-slate-600 rounded-lg px-4 py-8 text-white text-center'>
+              <div key={index} className='bg-slate-600 rounded-lg px-2 sm:px-4 py-4 sm:py-8 text-white text-center'>
                 <div className='text-sm font-medium'>{item.title}</div>
                 <div className='text-xs'>{item.description}</div>
               </div>
@@ -83,7 +83,7 @@ const ServiceCard = ({
           </div>
           <div className='grid grid-cols-2 gap-4'>
             {service.items.slice(2).map((item, index) => (
-              <div key={index} className='bg-slate-600 rounded-lg px-4 py-8 text-white text-center'>
+              <div key={index} className='bg-slate-600 rounded-lg px-4 py-4 sm:py-8 text-white text-center'>
                 <div className='text-sm font-medium'>{item.title}</div>
                 <div className='text-xs'>{item.description}</div>
               </div>
@@ -94,22 +94,22 @@ const ServiceCard = ({
     } else if (itemCount >= 5) {
       return (
         <>
-          <div className='grid grid-cols-2 gap-4 mb-4'>
+          <div className='grid grid-cols-2 gap-4 mb-3 sm:mb-4'>
             {service.items.slice(0, 2).map((item, index) => (
-              <div key={index} className='bg-slate-600 rounded-lg px-4 py-7 text-white text-center'>
+              <div key={index} className='bg-slate-600 rounded-lg px-2 sm:px-4 py-3 sm:py-7 text-white text-center'>
                 <div className='text-sm font-medium'>{item.title}</div>
                 <div className='text-xs'>{item.description}</div>
               </div>
             ))}
           </div>
           <div className='grid grid-cols-2 gap-4'>
-            <div className='bg-slate-600 rounded-lg px-4 py-8 text-white text-center'>
+            <div className='bg-slate-600 rounded-lg px-2 sm:px-4 py-4 sm:py-8 text-white text-center'>
               <div className='text-sm font-medium'>{service.items[2].title}</div>
               <div className='text-xs'>{service.items[2].description}</div>
             </div>
-            <div className='space-y-2'>
+            <div className='space-y-1'>
               {service.items.slice(3).map((item, index) => (
-                <div key={index} className='bg-slate-600 rounded-lg px-2 py-4 text-white text-center'>
+                <div key={index} className='bg-slate-600 rounded-lg px-2 py-2 sm:py-4 text-white text-center'>
                   <div className='text-xs font-medium'>{item.title}</div>
                   <div className='text-xs'>{item.description}</div>
                 </div>
@@ -122,7 +122,7 @@ const ServiceCard = ({
   };
 
   return (
-    <Card className='!bg-transparent border-none shadow-none' ref={cardRef}>
+    <Card className='!bg-transparent border-none shadow-none ' ref={cardRef}>
       <CardContent
         className={`${
           service.id === 1
@@ -138,12 +138,12 @@ const ServiceCard = ({
             : service.id === 6
             ? `bg_social`
             : `bg-slay-700`
-        } py-10  rounded-2xl`}
+        } py-3 sm:py-10  rounded-2xl`}
       >
         {renderContent()}
-        <div className='flex items-center justify-between mt-10'>
+        <div className='flex items-center justify-between mt-4 sm:mt-10'>
           <span className='text-sm font-medium'>{service.title}</span>
-          <Link href='#' className='text-sm text-blue-900 hover:underline'>
+          <Link href='#' className='text-sm text-slay-900 hover:underline'>
             View All →
           </Link>
         </div>

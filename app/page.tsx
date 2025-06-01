@@ -186,26 +186,26 @@ export default function Home() {
           ref={headerRef}
           className='flex items-center justify-between px-6 py-4'
         >
-          <nav className='flex items-center space-x-8'>
-            <Link href='#' className='!text-[#1A2C42] hover:text-gray-600'>
+          <nav className='flex items-center space-x-3 sm:space-x-6 lg:space-x-8'>
+            <Link href='#' className='!text-[#1A2C42] hover:text-gray-600 text-sm sm:text-base'>
               Work
             </Link>
-            <Link href='#' className='!text-[#1A2C42] hover:text-gray-600'>
+            <Link href='#' className='!text-[#1A2C42] hover:text-gray-600 text-sm sm:text-base'>
               About
             </Link>
           </nav>
 
           <div className='absolute left-1/2 transform -translate-x-1/2 flex justify-center flex-col lg:top-6 items-center'>
-            <h1 className='text-xl !text-[#1A2C42] !font-montserrat'>
+            <h1 className='sm:text-lg md:text-xl !text-[#1A2C42] !font-montserrat'>
               Velocity
             </h1>
             <div
               ref={logoLineRef}
-              className='w-96 bg-foreground !h-[1px] mx-auto mt-2'
+              className='!w-40  sm:!w-80 md:!w-96 bg-foreground !h-[.5px] sm:!h-[1px] mx-auto mt-2'
             ></div>
           </div>
 
-          <button className='border-2 border-gray-400 rounded-full px-6 py-1.5 hover:'>
+          <button className='border-1 sm:border-2 border-gray-400 rounded-full px-4 sm:px-6 py-.5 sm:py-1.5 hover:bg-gray-100'>
             Contact
           </button>
         </header>
@@ -217,6 +217,8 @@ export default function Home() {
                 ref={heroTextRef}
                 src='/hero-text.svg'
                 alt='hero text velocity'
+                //make the width reponsive
+                className='!w-[300px] sm:!w-[800px] h-auto !-mt-16 sm:!mt-0'
                 width={800}
                 height={120}
                 priority
@@ -224,19 +226,19 @@ export default function Home() {
             </div>
 
             <div
-              className='absolute left-0 w-full mx-auto -mt-20 p-8 
-                  bg-gradient-to-b from-[#e5e5e5]/1 to-transparent bg-opacity-50 
-                  backdrop-blur-lg transition-all duration-500'
+              className='absolute left-0 w-full mx-auto -mt-14 sm:-mt-20 p-8 
+                  bg-gradient-to-b from-[#e5e5e5]/1 to-transparent bg-opacity-30 
+                  backdrop-blur-sm transition-all duration-500'
             >
               <div className='mb-4'>
                 <p
                   ref={(el) => {
                     taglineRefs.current[0] = el;
                   }}
-                  className='text-[22px] text-gray-700 mb-2 font-poppins text-center tracking-wider'
+                  className='text-lg sm:text-[22px] text-gray-700 mb-2 font-poppins text-center tracking-wider'
                 >
                   With Innovative{" "}
-                  <span className='font-semibold font-oleo'>
+                  <span className='font-semibold font-oleo '>
                     Digital Solutions
                   </span>
                   , We Forge
@@ -245,7 +247,7 @@ export default function Home() {
                   ref={(el) => {
                     taglineRefs.current[1] = el;
                   }}
-                  className='text-[22px] text-gray-700 mb-4 font-poppins tracking-wider'
+                  className='sm:text-[22px] text-gray-700 mb-4 font-poppins tracking-wider text-lg'
                 >
                   Success At <span className='font-semibold'>The Speed</span> Of
                   Progress.
@@ -253,7 +255,7 @@ export default function Home() {
               </div>
               <p
                 ref={descriptionRef}
-                className='text-gray-600 mb-8 max-w-[420px] mx-auto font-montserrat text-justify text-sm'
+                className='text-gray-600 mb-8 max-w-[260px] sm:max-w-[420px] mx-auto font-montserrat text-justify text-[11px] sm:text-sm'
               >
                 We Forge Digital Success For Local Businesses In Addis Ababa,
                 Empowering Growth At The Speed Of Progress.
@@ -261,7 +263,7 @@ export default function Home() {
 
               <button
                 ref={exploreButtonRef}
-                className='bg-[#1A2C42] hover:bg-[#1f354f] !text-white px-12 !py-2.5 rounded-full mb-8 border-3 !border-[#FAD355] font-poppins '
+                className='bg-[#1A2C42] hover:bg-[#1f354f] !text-white px-10 sm:px-12 py-2 sm:!py-2.5 rounded-full mb-8 border-3 !border-[#FAD355] font-poppins text-sm sm:text-base'
               >
                 Explore
               </button>
@@ -283,20 +285,21 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <div className='horizontal-line sm:w-[450px] md:w-[600px] lg:w-[800px] bg-foreground !h-[.5px] mx-auto mt-20'></div>
+              <div className='horizontal-line sm:w-[450px] md:w-[600px] lg:w-[800px] bg-foreground !h-[.5px] mx-auto mt-10 sm:mt-16'></div>
             </div>
 
-            <div className='absolute !mt-96 flex flex-col justify-between items-center left-0 w-full px-8'>
+            <div className='absolute !mt-[28rem] sm:!mt-96 flex flex-col justify-between items-center left-0 w-full px-2 sm:px-8'>
               <div
                 ref={projectsHeaderRef}
-                className='absolute left-0 flex justify-between w-full items-center px-10'
+                className='absolute left-0 flex flex-col sm:flex-row justify-between w-full items-center px-3 sm:px-10 gap-4'
               >
                 <p className='font-montserrat font-semibold text-xl text-[#1A2C42]'>
                   Recent Projects
                 </p>
+                {/* input field(select option) */}
                 <div
                   ref={filterRef}
-                  className='flex items-center justify-center gap-8'
+                  className='flex items-center justify-center gap-5 sm:gap-8'
                 >
                   <div className='flex items-center justify-center'>
                     <Image
@@ -304,21 +307,22 @@ export default function Home() {
                       alt='check box'
                       width={24}
                       height={24}
-                      className='inline-block mr-2'
+                      className='inline-block mr-1 sm:mr-2'
                     />
-                    <p>Categorized</p>
+                    <p className="text-sm sm:text-base">Categorized</p>
                   </div>
                   <div className='flex items-center justify-center'>
                     <label
                       htmlFor='category'
-                      className='py-[6px] px-5 bg-[#1A2C42] text-white font-montserrat border-2 border-[#FAD355] cursor-pointer hover:bg-[#1f354f] relative z-10'
+                      className='py-1 sm:py-[6px] px-3 sm:px-5 bg-[#1A2C42] text-white font-montserrat border-1 sm:border-2
+                      text-sm sm:text-base border-[#FAD355] rounded-bl-sm rounded-tl-sm cursor-pointer hover:bg-[#1f354f] relative z-1'
                     >
                       Filter
                     </label>
                     <select
                       name='category'
                       id='category'
-                      className='py-[7px] px-5 bg-[#d5d5d5] text-[#1A2C42] font-montserrat border-2 border-[#d8d8d8] cursor-pointer hover:bg-[#d1d1d1] -ml-1'
+                      className='py-[3px] sm:py-[7px] px-1 sm:px-5 bg-[#d5d5d5] text-[#1A2C42] font-montserrat border-2 border-[#d8d8d8] cursor-pointer hover:bg-[#d1d1d1] -ml-1 text-sm sm:text-base rounded-br-sm rounded-tr-sm'
                     >
                       <option value='Social Media'>Social Media</option>
                       <option value='Web Development'>Web Development</option>
@@ -346,14 +350,14 @@ export default function Home() {
 
         <section
           ref={contactRef}
-          className='relative max-w-5xl mx-auto px-6 py-2 top-[80rem]'
+          className='relative max-w-5xl mx-auto px-6 py-2 top-[140rem] sm:top-[168rem] md:top-[106rem] lg:top-[80rem]'
         >
           <ContactUs />
         </section>
 
         <footer
           ref={footerRef}
-          className='relative top-[72rem] left-0 w-full text-green-700 py-8 px-10 text-center'
+          className='relative top-[128rem] sm:top-[152rem] md:top-[92rem] lg:top-[72rem] w-full text-green-700 py-8 px-1 sm:px-3 md:px-5 lg:px-10 text-center'
         >
           <Footer />
         </footer>

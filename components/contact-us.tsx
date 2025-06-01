@@ -42,13 +42,13 @@ const ContactUs = () => {
       transition={{ duration: 1, ease: "easeOut" }}
       className='max-w-6xl mx-auto'
     >
-      <div className='relative top-8'>
-        <h1 className='text-2xl font-semibold font-poppins text-gray-900'>
+      <div className='relative -top-4 lg:top-8 '>
+        <h1 className='text-base sm:text-xl md:text-2xl lg:text-3xl not-[]:font-semibold font-poppins text-gray-900'>
           Contact Us
         </h1>
-        <p className='text-gray-600 font-poppins'>Reach out.</p>
+        <p className='text-gray-600 font-poppins text-sm sm:text-base lg:text-lg'>Reach out.</p>
       </div>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-start bg-[#FCFAFA] rounded-xl shadow-sm px-12 py-6 relative z-10 !ml-60 !w-2xl'>
+      <div className='grid grid-cols-2 gap-8 sm:gap-20 items-start bg-[#FCFAFA] rounded-xl shadow-sm pl-6 pr-12 sm:px-8 md:px-12 py-5 sm:py-6 relative z-10 sm:!ml-10 md:!ml-20 lg:!ml-60 !w-auto md:!w-2xl'>
         {/* Left side - Form */}
         <div>
           <form onSubmit={handleSubmit} className='space-y-12'>
@@ -105,9 +105,9 @@ const ContactUs = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 type='submit'
-                className='bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-8 rounded-full border-2 border-yellow-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2'
+                className='bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-8 rounded-full border-2 border-yellow-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 '
               >
-                Contact Us
+                <p className="!text-[10px] sm:!text-base font-poppins font-normal w-auto text-nowrap">Contact Us</p>
               </motion.button>
             </motion.div>
           </form>
@@ -140,7 +140,7 @@ const ContactUs = () => {
             </motion.div>
           </div>
 
-          <div className='flex items-center space-x-8 mt-4'>
+          <div className='flex items-center space-x-8 mt-0 sm:mt-4'>
             <motion.a
               href='https://www.facebook.com/velocity'
               target='_blank'
