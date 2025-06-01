@@ -164,5 +164,28 @@
   height: 360px;
 }
 
+@media (max-width: 768px) {
+  .bg_consult,
+  .bg_media,
+  .bg_social,
+  .bg_advert,
+  .bg_graphics,
+  .bg_edit {
+    height: 280px;
+    background-position: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .bg_consult,
+  .bg_media,
+  .bg_social,
+  .bg_advert,
+  .bg_graphics,
+  .bg_edit {
+    height: 220px;
+  }
+}
+
 
 
