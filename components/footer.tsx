@@ -87,7 +87,7 @@ const Footer = () => {
 
           {/* Right Side */}
           <div className='flex flex-col justify-between items-center gap-6 sm:gap-20 md:gap-40 md:h-full'>
-            <div className='grid grid-cols-2 !justify-between md:flex md:flex-wrap gap-4 sm:gap-x-8 md:gap-x-5 lg:gap-8 footer-section'>
+            <div className='flex flex-wrap sm:grid sm:grid-cols-2 !justify-between md:flex md:flex-wrap gap-8 sm:gap-4 sm:gap-x-8 md:gap-x-5 lg:gap-8 footer-section'>
               <a
                 href='#'
                 className='text-gray-400 hover:text-white transition-colors font-montserrat text-sm sm:text-base'
