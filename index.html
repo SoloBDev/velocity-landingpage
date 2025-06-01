@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Border Button</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a2c42, #0d1520);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(100, 180, 255, 0.5);
+            background: linear-gradient(to right, #00b3ff, #00ffcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #a0c4e0;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .button-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+        }
+        
+        .snake-button {
+            position: relative;
+            display: inline-block;
+            padding: 20px 50px;
+            background: #1a2c42;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .snake-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+        
+        .snake-button:active {
+            transform: translateY(2px);
+        }
+        
+        .button-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            pointer-events: none;
+        }
+        
+        .outer-border {
+            z-index: 1;
+            border: 3px solid transparent;
+            animation: snakeOuter 4s linear infinite;
+            box-shadow: 0 0 15px rgba(0, 179, 255, 0.5);
+        }
+        
+        .inner-border {
+            z-index: 0;
+            top: 8px;
+            left: 8px;
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+            border: 2px solid transparent;
+            animation: snakeInner 3s linear infinite;
+        }
+        
+        @keyframes snakeOuter {
+            0% {
+                border-top-color: #00b3ff;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+            }
+            25% {
+                border-top-color: #00b3ff;
+                border-right-color: #00b3ff;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+            }
+            50% {
+                border-top-color: #00b3ff;
+                border-right-color: #00b3ff;
+                border-bottom-color: #00b3ff;
+                border-left-color: transparent;
+            }
+            75% {
+                border-top-color: #00b3ff;
+                border-right-color: #00b3ff;
+                border-bottom-color: #00b3ff;
+                border-left-color: #00b3ff;
+            }
+            100% {
+                border-top-color: transparent;
+                border-right-color: #00b3ff;
+                border-bottom-color: #00b3ff;
+                border-left-color: #00b3ff;
+            }
+        }
+        
+        @keyframes snakeInner {
+            0% {
+                border-top-color: transparent;
+                border-right-color: #00ffcc;
+                border-bottom-color: #00ffcc;
+                border-left-color: #00ffcc;
+            }
+            25% {
+                border-top-color: #00ffcc;
+                border-right-color: transparent;
+                border-bottom-color: #00ffcc;
+                border-left-color: #00ffcc;
+            }
+            50% {
+                border-top-color: #00ffcc;
+                border-right-color: #00ffcc;
+                border-bottom-color: transparent;
+                border-left-color: #00ffcc;
+            }
+            75% {
+                border-top-color: #00ffcc;
+                border-right-color: #00ffcc;
+                border-bottom-color: #00ffcc;
+                border-left-color: transparent;
+            }
+            100% {
+                border-top-color: transparent;
+                border-right-color: #00ffcc;
+                border-bottom-color: #00ffcc;
+                border-left-color: #00ffcc;
+            }
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            gap: 30px;
+        }
+        
+        .feature {
+            background: rgba(26, 44, 66, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0, 179, 255, 0.2);
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            background: rgba(26, 44, 66, 0.9);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #00b3ff, #00ffcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .feature h3 {
+            color: #00ffcc;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .feature p {
+            color: #a0c4e0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 179, 255, 0.4);
+            opacity: 0.7;
+            z-index: -1;
+            animation: pulse 2s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 20px rgba(0, 179, 255, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 40px rgba(0, 179, 255, 0.8);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .snake-button {
+                padding: 16px 40px;
+                font-size: 1.3rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Animated Border Button</h1>
+        <p class="subtitle">Experience the mesmerizing snake-like animation with dual borders that move independently around the button</p>
+        
+        <div class="button-container">
+            <div class="glow"></div>
+            <div class="button-border outer-border"></div>
+            <div class="button-border inner-border"></div>
+            <button class="snake-button">Hover & Watch</button>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i>🌀</i>
+                <h3>Dual Animation</h3>
+                <p>Two borders with independent snake-like movements for a mesmerizing effect</p>
+            </div>
+            <div class="feature">
+                <i>✨</i>
+                <h3>Smooth Transitions</h3>
+                <p>Fluid animation with elegant color transitions and glowing effects</p>
+            </div>
+            <div class="feature">
+                <i>💎</i>
+                <h3>Modern Design</h3>
+                <p>Clean aesthetics with a futuristic feel that works on all devices</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.querySelector('.snake-button');
+            
+            button.addEventListener('mouseenter', () => {
+                document.querySelector('.glow').style.animation = 'pulse 1s infinite alternate';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                document.querySelector('.glow').style.animation = 'pulse 2s infinite alternate';
+            });
+        });
+    </script>
+</body>
+</html>
